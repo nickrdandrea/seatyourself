@@ -1,0 +1,39 @@
+users
+id
+first name
+last name
+email
+phone
+username
+password
+
+
+retaurants
+id
+owner_id
+name
+address
+image
+description
+phone
+website
+capacity
+hours
+cuisine
+price range
+menu optional url
+
+reservations
+id
+user_id
+restaurant_id
+datetime
+seats
+request
+rating
+comment
+
+category
+id
+name
+price
