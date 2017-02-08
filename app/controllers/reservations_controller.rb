@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_action :load_user
+  before_action :ensure_logged_in, only: [:create, :destroy]
 
   def index
     @reservations = Reservation.all
@@ -18,7 +20,8 @@ class ReservationsController < ApplicationController
 
 
   def create
-    @reservations = Reservation.new(reservation_params)
+    @reservation = @restaurant.reservation.build(reservation_params)
+    @reservation.user = current_user
 
     if @reservations.save
       redirect_to root_path
@@ -43,6 +46,17 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to root_path
+  end
+
+  private
+
+  def reservation_params
+    params.require(:reservation).permit(:date, :time, :seats, :request)
+  end
+
+
+    def load_user
+    @user = User.find(params[:product_id])
   end
 
 end
