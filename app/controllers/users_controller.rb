@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)
     if @user.save
-        redirect_to_reservation_url, notice: "Signed up"
+        redirect_to_users_url, notice: "Signed up"
     else
         render "new"
     end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   private
    def user_params
-     params.require(:user).permit(:first_name, last_name :email, :phone :password, :password_confirmation, :username)
+     params.require(:user).permit(:first_name, :last_name :email, :phone :password, :password_confirmation, :username)
    end
   end
  end
