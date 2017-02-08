@@ -1,2 +1,2 @@
-class ReservationsController < ApplicationController
+class ReservationsController < ApplicationController  
 end
