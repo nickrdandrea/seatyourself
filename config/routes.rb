@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :restaurant
+  resources :restaurants
 
-  resources :user
+  resources :users
 
-  resources :reservation
+  resources :reservations
 
   resources :sessions, only: [:new, :create, :destroy]
 end
