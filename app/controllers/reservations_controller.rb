@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class ReservationsController < ApplicationController
 
   def index
