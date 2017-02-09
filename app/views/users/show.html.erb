@@ -1,0 +1,5 @@
+<%= link_to root_path %> | <%= link_to "Edit", edit_restaurants_user_path(@User) %> | <%= link_to delete_restaurants_user_path(@user), method: :delete, data: {confirm: "want to change the userinfo?"} %>
+
+<% @user.each do |user| %>
+  <p><%= user.first_name %>, <%= user.last_name %>,<%= user.password %>, <%= user.email %>,<%= user.username %>, <%= user.phone %>, <%= user.restaurant_id %></p>
+<% end %>
