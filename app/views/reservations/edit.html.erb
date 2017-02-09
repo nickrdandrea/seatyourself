@@ -1,0 +1,27 @@
+<h1>Edit Reservation</h1>
+
+<p>
+  <%= link_to "Back", @reservation %>
+</p>
+
+<%= form_for @reservation do |f| %>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </p>
+  <p>
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </p>
+  <p>
+    <%= f.label :seats %><br>
+    <%= f.text_field :seats %>
+  </p>
+  <p>
+    <%= f.label :request %><br>
+    <%= f.text_field :request %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
