@@ -7,15 +7,15 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservations = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
-    @reservations = Reservation.new
+    @reservation = Reservation.new
   end
 
   def edit
-    @reservations = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 
 
@@ -23,8 +23,8 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservation.build(reservation_params)
     @reservation.user = current_user
 
-    if @reservations.save
-      redirect_to root_path
+    if @reservation.save
+      redirect_to root_url
     else
       render :new
     end
@@ -32,10 +32,10 @@ class ReservationsController < ApplicationController
 
 
   def update
-    @reservations = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
 
-    if @reservations.update_attributes(reservation_params)
-      redirect_to root_path(@reservation)
+    if @reservation.update_attributes(reservation_params)
+      redirect_to root_url(@reservation)
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to root_path
+    redirect_to root_url
   end
 
   private
@@ -55,8 +55,8 @@ class ReservationsController < ApplicationController
   end
 
 
-    def load_user
-    @user = User.find(params[:product_id])
-  end
+  # def load_user
+  #   @user = User.find(params[:product_id])
+  # end
 
 end
