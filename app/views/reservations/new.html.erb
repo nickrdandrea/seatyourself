@@ -5,15 +5,15 @@
 <%= form_for [@restaurant, @reservation] do |f| %>
   <p>
     <%= f.label :date %><br>
-    <%= f.text_field :date %>
+    <%= f.date_field :date %>
   </p>
   <p>
     <%= f.label :time %><br>
-    <%= f.text_field :time %>
+    <%= f.time_field :time %>
   </p>
   <p>
     <%= f.label :seats %><br>
-    <%= f.text_field :seats %>
+    <%= f.number_field :seats %>
   </p>
   <p>
     <%= f.label :request %><br>

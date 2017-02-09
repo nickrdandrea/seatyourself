@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
 
 
   def create
-    @reservation = @restaurant.reservation.build(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
 
     if @reservation.save
