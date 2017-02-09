@@ -51,6 +51,6 @@ class RestaurantsController < ApplicationController
   end
 
   def load_user
-    @user = User.find(params[:product_id])
+    @user = User.find(params[:user_id])
   end
 end
