@@ -1,10 +1,12 @@
 <%= render @restaurant %>
+
 <div id= "restaurantinfo">
   <ul>
     <li>Address: <%= @restaurant.address %></li>
     <li>Phone: <%= @restaurant.phone %></li>
     <li>Website: <%= @restaurant.website %></li>
     <li>Capacity: <%= @restaurant.capacity %></li>
+    <li>Category: <%= Category.find(@restaurant.id).name %></li>
     </br>
     </br>
     <!-- <li>Category: <%#= Category.find(@restaurant.category_id).name %></li> -->
