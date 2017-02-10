@@ -70,7 +70,7 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
-    @restaurant = @restaurant.restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def create
@@ -125,7 +125,7 @@ class ReservationsController < ApplicationController
     @reservation.user_id = current_user.id
 
     if @reservation.update_attributes(reservation_params)
-      redirect_to restaurant_path
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end
