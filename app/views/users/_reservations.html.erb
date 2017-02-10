@@ -11,5 +11,5 @@
   <p>Seats: <%= reservation.seats %></p>
   <p>Request: <%= reservation.request %></p>
   <%= link_to "Edit", edit_restaurant_reservation_path(reservation.restaurant_id, reservation.id) %> |
-  <%#= link_to "Delete", restaurant_reservation_path[@restaurant, reservation], method: :delete, data: {confirm: "Are you sure you want to Delete this reservation?"} %>
+  <%= link_to "Delete", restaurant_reservation_path(reservation.restaurant_id, reservation.id), method: :delete, data: {confirm: "Are you sure you want to Delete this reservation?"} %>
 </div>
