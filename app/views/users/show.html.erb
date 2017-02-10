@@ -1,45 +1,18 @@
 
-<h1 class="profile-welcome">Welcome home,
+<!-- <h1 class="profile-welcome">Welcome home,
     <%#= current_user.name %>
     <%= current_user.reservations.count %>
     <%=  "reservation".pluralize(current_user.reservations.count)%>
     loading.
-</h1>
+</h1> -->
+<p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
+<%= link_to "Edit", edit_user_path(:id) %> |
+<%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to Delete this user?"} %>
+</br>
 
-<h1>Your restaurants:</h1>
+<h2>Your Restaurants</h2>
+<%= render :partial => "owned", :collection => @restaurants, :as => :restaurant %>
+<%= link_to "New Restaurant", new_restaurant_path%>
 
-<div class="your-restaurant-list">
-  <% @restaurants.each do |restaurant| %>
-    <%if restaurant.owner_id == current_user.id %>
-      <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-
-      <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %> | <%= link_to 'Delete', restaurant_path(restaurant), method: :delete %></p>
-
-
-    <% end %>
-  <% end %>
-</div>
-
-    <div class="reservation-list">
-        <% @reservations.order(:date).each do |reservation| %>
-          <% if reservation.user_id == current_user.id %>
-            <p id="restaurant-name"><%= reservation.restaurant.name %></p>
-            <p id="reservation-date">
-                <%= reservation.date.strftime('%d %b %Y') %>
-                at
-                <%= reservation.time.hour %>:00 for
-                <%= reservation.seats %>
-                people.</p>
-            <p id="reservation-note"><%= reservation.note %></p>
-
-            <p><%= link_to 'Edit', edit_user_reservation_path(current_user, reservation) %> | <%= link_to 'Delete', user_reservation_path(current_user, reservation), method: :delete %></p>
-          <% end %>
-        <% end %>
-    </div>
-
-
-
-
-<div class='new_form_link'>
-  <p>Want to list your own restaurant on SeatYourself? <span><%= link_to "Click here!", new_restaurant_path%></span></p>
-</div>
+<h2>Your Reservations</h2>
+<%= render :partial => "reservations", :collection => @reservations, :as => :reservation %>
