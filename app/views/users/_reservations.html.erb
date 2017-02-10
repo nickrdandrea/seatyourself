@@ -1,0 +1,8 @@
+<div class="reservation">
+  <p>Date: <%= reservation.date %></p>
+  <p>Time: <%= reservation.time %></p>
+  <p>Description: <%= reservation.seats %></p>
+  <p>Description: <%= reservation.request %></p>
+  <%= link_to "Edit", edit_restaurant_reservation_path(reservation.id) %> |
+  <%#= link_to "Delete", restaurant_reservation_path[@restaurant, reservation], method: :delete, data: {confirm: "Are you sure you want to Delete this reservation?"} %>
+</div>

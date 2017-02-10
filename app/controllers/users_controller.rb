@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
       @user = User.new
   end
@@ -10,6 +11,12 @@ class UsersController < ApplicationController
     else
         render "new"
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @restaurant = Restaurant.where(owner_id: @user.id)
+    @reservation = Reservation.where(user_id: @user.id)
   end
 
    def edit
@@ -29,7 +36,7 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to root_path
+      redirect_to logout_url
     end
 
   private

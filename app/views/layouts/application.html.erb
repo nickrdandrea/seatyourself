@@ -17,7 +17,9 @@
   <nav>
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <% if current_user %>
+        <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <% end %>
     </ul>
   </nav>
   <p class="userinfo">
