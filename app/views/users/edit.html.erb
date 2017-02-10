@@ -1,8 +1,5 @@
 <h1>Edit User</h1>
 
-<p>
-  <%= link_to "Back", @user %>
-</p>
 <%= form_for @user do |f| %>
 <div class="field">
  <%= f.label :first_name %><br/>
@@ -34,3 +31,7 @@
 </div>
 <div class="actions"><%= f.submit %></div>
 <% end %>
+
+<p>
+  <%= link_to "Back", @user %>
+</p>

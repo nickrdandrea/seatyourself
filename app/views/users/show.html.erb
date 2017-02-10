@@ -5,14 +5,28 @@
     <%=  "reservation".pluralize(current_user.reservations.count)%>
     loading.
 </h1> -->
-<p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
-<%= link_to "Edit", edit_user_path(:id) %> |
-<%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to Delete this user?"} %>
+<div id="userinfo">
+  <span class="title">
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <%= link_to "| Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to Delete this user?"} %>
+    <%= link_to "Edit |", edit_user_path(current_user.id) %>
+  </span>
+  <ul>
+    <li>Email: <%= @user.email %></li>
+    <li>Username: <%= @user.username %></li>
+    <li>Phone: <%= @user.phone %></li>
+    <li>    </li>
+  </ul>
+</div>
 </br>
 
-<h2>Your Restaurants</h2>
-<%= render :partial => "owned", :collection => @restaurants, :as => :restaurant %>
-<%= link_to "New Restaurant", new_restaurant_path%>
+<hr>
+<span class="title">
+  <h1>Your Restaurants</h1><%= link_to "New Restaurant", new_restaurant_path%>
+</span>
 
-<h2>Your Reservations</h2>
+<%= render :partial => "owned", :collection => @restaurants, :as => :restaurant %>
+
+
+<h1>Your Reservations</h1>
 <%= render :partial => "reservations", :collection => @reservations, :as => :reservation %>

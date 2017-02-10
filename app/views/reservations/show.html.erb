@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= link_to "Back to Home", restaurants_url %> | <%= link_to "Edit", edit_reservation_path(@reservation) %>
+=======
+<%= link_to "Edit", edit_restaurants_reservation_path(@reservation) %> | <%= link_to delete_restaurants_reservation_path(@reservation), method: :delete, data: {confirm: "Are you sure you want to cancel this reservation?"} %>
+>>>>>>> c8b873652b55443edc60b0fa79b7e1f1c636b585
 
 <% @reservations.each do |reservation| %>
   <p><%= reservation.date %>, <%= reservation.time %>, <%= reservation.seats %>, <%= reservation.request %>, <%= reservation.restaurant_id %></p>

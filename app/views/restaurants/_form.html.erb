@@ -15,44 +15,65 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :image %><br />
     <%= f.text_field :image %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :website %><br />
     <%= f.text_field :website %>
-  </div>
+  </div></br>
+
+  <div class="field">
+    <%= f.label :opening_hour %><br />
+    <%= f.time_field :opening_hour %>
+  </div></br>
+
+  <div class="field">
+    <%= f.label :closing_hour %><br />
+    <%= f.time_field :closing_hour %>
+  </div></br>
+
   <div class="field">
     <%= f.label :capacity %><br />
     <%= f.number_field :capacity %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :menu %><br />
     <%= f.text_field :menu %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :category_id %><br />
     <%= f.text_field :category_id %>
-  </div>
+  </div></br>
+
   <div class="field">
     <%= f.label :price_range %><br />
     <%= f.number_field :price_range %>
-  </div>
+  </div></br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

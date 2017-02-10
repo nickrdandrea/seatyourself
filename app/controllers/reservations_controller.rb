@@ -25,18 +25,18 @@ class ReservationsController < ApplicationController
     end
 
     # Doesn't use attributes from our restaurants model
-    #
-    # def open_validation(reservation_time)
-    #   if @restaurant.close < @restaurant.open
-    #     if reservation_time.hour < @restaurant.open.hour
-    #       reservation_time.hour < @restaurant.close.hour
-    #     else
-    #       reservation_time.hour >= @restaurant.open.hour
-    #     end
-    #   else
-    #     reservation_time.hour >= @restaurant.open.hour && reservation_time.hour < @restaurant.close.hour
-    #   end
-    # end
+
+    def open_validation(reservation_time)
+      if @restaurant.closing_hour < @restaurant.opening_hour
+        if reservation_time.hour < @restaurant.opening_hour.hour
+          reservation_time.hour < @restaurant.closing_hour.hour
+        else
+          reservation_time.hour >= @restaurant.opening_hour.hour
+        end
+      else
+        reservation_time.hour >= @restaurant.opening_hour.hour && reservation_time.hour < @restaurant.closing_hour.hour
+      end
+    end
 
 
     def reservation_params
