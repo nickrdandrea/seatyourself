@@ -34,7 +34,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: red;
+  background-color: darkred;
 }
 
 nav li {
@@ -79,6 +79,7 @@ main {
 }
 
 div.restaurant {
+  color: white;
   width: 30%;
   height: 300px;
   margin: 10px;
@@ -96,7 +97,7 @@ div.restaurant h1 {
 
 div.restaurant a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 div.restaurant span {
@@ -156,6 +157,7 @@ span.title h1 {
 }
 
 div.owned {
+  color: white;
   width: 950px;
   margin: auto;
   padding: 15px;
@@ -163,6 +165,10 @@ div.owned {
   background: yellow;
   float:left;
   margin-bottom: 20px;
+}
+
+div.owned a {
+  color: white;
 }
 
 div.owned h2 {
@@ -170,6 +176,7 @@ div.owned h2 {
 }
 
 div.reservation {
+  color: white;
   width: 950px;
   margin: auto;
   padding: 15px;
@@ -177,4 +184,8 @@ div.reservation {
   background: yellow;
   float:left;
   margin-bottom: 20px;
+}
+
+div.reservation a {
+  color: white;
 }

@@ -1,4 +1,9 @@
-<div class="reservation">
+<% if (Restaurant.where(id: reservation.restaurant_id).present?)
+  @restaurant = Restaurant.find(reservation.restaurant_id)
+end %>
+
+
+<div class="reservation" style="background:url(<%= @restaurant.image %>")>
   <h2><%=
   if (Restaurant.where(id: reservation.restaurant_id).present?)
     Restaurant.find(reservation.restaurant_id).name
