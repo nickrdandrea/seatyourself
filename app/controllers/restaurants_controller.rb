@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   #before_action :load_user
   before_action :ensure_logged_in, only: [:create, :destroy]
+
   def index
     @restaurants = Restaurant.all
   end
@@ -41,7 +42,6 @@ class RestaurantsController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
-    redirect_to restaurants_url
   end
 
   private

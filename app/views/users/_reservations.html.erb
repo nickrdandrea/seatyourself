@@ -1,0 +1,15 @@
+<div class="reservation">
+  <h1><%=
+  if (Restaurant.where(id: reservation.restaurant_id).present?)
+    Restaurant.find(reservation.restaurant_id).name
+  else
+    "Closed Restaurant"
+  end
+  %></h1>
+  <p>Date: <%= reservation.date %></p>
+  <p>Time: <%= reservation.time %></p>
+  <p>Seats: <%= reservation.seats %></p>
+  <p>Request: <%= reservation.request %></p>
+  <%= link_to "Edit", edit_restaurant_reservation_path(reservation.restaurant_id, reservation.id) %> |
+  <%= link_to "Delete", restaurant_reservation_path(reservation.restaurant_id, reservation.id), method: :delete, data: {confirm: "Are you sure you want to Delete this reservation?"} %>
+</div>

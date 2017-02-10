@@ -1,0 +1,18 @@
+
+<!-- <h1 class="profile-welcome">Welcome home,
+    <%#= current_user.name %>
+    <%= current_user.reservations.count %>
+    <%=  "reservation".pluralize(current_user.reservations.count)%>
+    loading.
+</h1> -->
+<p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
+<%= link_to "Edit", edit_user_path(:id) %> |
+<%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to Delete this user?"} %>
+</br>
+
+<h2>Your Restaurants</h2>
+<%= render :partial => "owned", :collection => @restaurants, :as => :restaurant %>
+<%= link_to "New Restaurant", new_restaurant_path%>
+
+<h2>Your Reservations</h2>
+<%= render :partial => "reservations", :collection => @reservations, :as => :reservation %>

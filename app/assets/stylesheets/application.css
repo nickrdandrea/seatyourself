@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+ /* BASE styles */
+
+html {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  color: #333333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: red;
+}
+
+nav li {
+  float: left;
+}
+
+nav li:nth-last-child(-n+2) {
+  float: right;
+}
+
+nav li a, nav li p {
+  display: block;
+  margin: 0;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  line-height: 100px;
+  background-color: #333;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+main {
+  width: 900px;
+  margin: auto;
+}
