@@ -1,6 +1,6 @@
 <div class="restaurant">
-  <h1><%= link_to restaurant.name, restaurant %></h1>
-  <p>testDescription: <%= restaurant.description %></p>
+  <h1><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h1>
+  <p>Description: <%= restaurant.description %></p>
   <%= link_to "Edit", edit_restaurant_path(restaurant.id) %> |
   <%= link_to "Delete", restaurant_path, method: :delete, data: {confirm: "Are you sure you want to change Delete this restaurant?"} %>
 </div>

@@ -2,6 +2,7 @@
 
 <p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
 <%= link_to "Edit", edit_user_path(:id) %> |
-<%= link_to "Delete", user_path, method: :delete, data: {confirm: "want to change Delete this user?"} %>
-
-<%= render @restaurants.find_by(owner_id: @user.id) %>
+<%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to Delete this user?"} %>
+</br>
+<%= link_to "New Restaurant", new_restaurant_path %>
+<%= render :partial => "owned", :collection => @restaurant, :as => :restaurant %>
