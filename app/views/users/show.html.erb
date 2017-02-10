@@ -1,9 +1,24 @@
 
 <h1 class="profile-welcome">Welcome home,
-    <%= current_user.name %>
+    <%#= current_user.name %>
     <%= current_user.reservations.count %>
     <%=  "reservation".pluralize(current_user.reservations.count)%>
-    loading.</h1>
+    loading.
+</h1>
+
+<h1>Your restaurants:</h1>
+
+<div class="your-restaurant-list">
+  <% @restaurants.each do |restaurant| %>
+    <%if restaurant.owner_id == current_user.id %>
+      <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+
+      <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %> | <%= link_to 'Delete', restaurant_path(restaurant), method: :delete %></p>
+
+
+    <% end %>
+  <% end %>
+</div>
 
     <div class="reservation-list">
         <% @reservations.order(:date).each do |reservation| %>
@@ -23,19 +38,7 @@
     </div>
 
 
-<h1>Your restaurants:</h1>
 
-<div class="your-restaurant-list">
-  <% @restaurants.each do |restaurant| %>
-    <%if restaurant.user_id == current_user.id %>
-      <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-
-      <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %> | <%= link_to 'Delete', restaurant_path(restaurant), method: :delete %></p>
-
-
-    <% end %>
-  <% end %>
-</div>
 
 <div class='new_form_link'>
   <p>Want to list your own restaurant on SeatYourself? <span><%= link_to "Click here!", new_restaurant_path%></span></p>

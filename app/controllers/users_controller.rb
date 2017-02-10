@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @restaurant = Restaurant.where(owner_id: @user.id)
-    @reservation = Reservation.where(user_id: @user.id)
+    @restaurants = Restaurant.where(owner_id: @user.id)
+    @reservations = Reservation.where(user_id: @user.id)
   end
 
    def edit
