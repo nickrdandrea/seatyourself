@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @restaurants = Restaurant.all
   end
 
    def edit
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to logout_path
+      redirect_to logout_url
     end
 
   private

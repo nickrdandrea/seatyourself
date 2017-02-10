@@ -1,6 +1,7 @@
-<%= link_to "Home", root_path %> | <%= link_to "Edit", edit_user_path(:id) %> |
+
+
+<p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
+<%= link_to "Edit", edit_user_path(:id) %> |
 <%= link_to "Delete", user_path, method: :delete, data: {confirm: "want to change Delete this user?"} %>
 
-<%# @user.each do |user| %>
-  <p><%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>,<%= @user.username %>, <%= @user.phone %></p>
-<%# end %>
+<%= render @restaurants.find_by(owner_id: @user.id) %>
