@@ -72,6 +72,109 @@ header h1 {
 }
 
 main {
-  width: 900px;
+  width: 1000px;
   margin: auto;
+  padding: 10px;
+  overflow: hidden;
+}
+
+div.restaurant {
+  width: 30%;
+  height: 300px;
+  margin: 10px;
+  padding: 15px;
+  padding-bottom: 0px;
+  background: yellow;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float:left;
+  position: relative;
+}
+
+div.restaurant h1 {
+
+}
+
+div.restaurant a {
+  text-decoration: none;
+  color: black;
+}
+
+div.restaurant span {
+  position: absolute;
+  height: 30%;
+  width: 275px;
+  bottom:0;
+  left:15px;
+}
+div#restaurantinfo {
+  height: 300px;
+  width: 60%;
+  margin: 10px;
+  padding: 15px;
+  padding-bottom: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float:left;
+  position: relative;
+}
+
+div#restaurantinfo ul {
+  list-style-type: none;
+}
+
+div#restaurantinfo li {
+  margin-bottom: 5px;
+}
+
+div#restaurantinfo span {
+  position: absolute;
+  height: 30%;
+  width: 275px;
+  bottom:0;
+  left:15px;
+}
+
+div#userinfo ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+div#userinfo li {
+  margin-bottom: 5px;
+}
+
+span.title {
+  overflow: hidden;
+  display: block;
+}
+
+span.title a {
+  float: right;
+}
+
+span.title h1 {
+  float: left;
+}
+
+div.owned {
+  width: 950px;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: yellow;
+  float:left;
+  margin-bottom: 20px;
+}
+
+div.owned h2 {
+  margin: 0;
+}
+
+div.reservation {
+  width: 950px;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: yellow;
+  float:left;
+  margin-bottom: 20px;
 }

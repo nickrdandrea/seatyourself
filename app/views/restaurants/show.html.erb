@@ -1,3 +1,13 @@
 <%= render @restaurant %>
-
-<%= link_to 'New Reservation', new_restaurant_reservation_path(@restaurant) %>
+<div id= "restaurantinfo">
+  <ul>
+    <li>Address: <%= @restaurant.address %></li>
+    <li>Phone: <%= @restaurant.phone %></li>
+    <li>Website: <%= @restaurant.website %></li>
+    <li>Capacity: <%= @restaurant.capacity %></li>
+    </br>
+    </br>
+    <!-- <li>Category: <%#= Category.find(@restaurant.category_id).name %></li> -->
+    <li><%= link_to 'Make Reservation', new_restaurant_reservation_path(@restaurant) %></li>
+  </ul>
+</div>
