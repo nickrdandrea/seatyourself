@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.new(name: 'Asian')
-Category.new(name: 'French')
-Category.new(name: 'Greek')
-Category.new(name: 'British')
-Category.new(name: 'American')
+Category.create(name: 'Asian')!
+Category.create(name: 'French')!
+Category.create(name: 'Greek')!
+Category.create(name: 'British')!
+Category.create(name: 'American')!
 
-Restaurant.new(
+Restaurant.create(
   name: 'Central Perk',
   address: 'New York',
   image: 'http://vignette2.wikia.nocookie.net/friends/images/9/94/Central_Perk.jpg/revision/latest?cb=20130105161326',
@@ -23,9 +23,9 @@ Restaurant.new(
   owner_id: 1,
   category_id: 5,
   price_range: 1
-)
+)!
 
-Restaurant.new(
+Restaurant.create(
   name: 'Bluth\'s Original Frozen Banana Stand',
   address: 'Newport Beach',
   image: 'http://vignette2.wikia.nocookie.net/arresteddevelopment/images/6/67/1x05_Charity_Drive_(10).png/revision/latest/scale-to-width-down/670?cb=20120205003332',
@@ -36,9 +36,9 @@ Restaurant.new(
   owner_id: 2,
   category_id: 5,
   price_range: 1
-)
+)!
 
-Restaurant.new(
+Restaurant.create(
   name: 'La Ratatouille',
   address: 'Paris',
   image: 'http://www.trbimg.com/img-5137d459/turbine/la-trb-ratatouille-disneyland-paris-03201307-p-005',
@@ -49,9 +49,9 @@ Restaurant.new(
   owner_id: 3,
   category_id: 2,
   price_range: 3
-)
+)!
 
-Restaurant.new(
+Restaurant.create(
   name: 'The Three Broomsticks',
   address: 'Hosmeade',
   image: 'https://d3b8erylo0uriu.cloudfront.net/wp-content/uploads/2011/08/oi-universal-orlando-trip-report-august-2011-245.jpg',
@@ -62,7 +62,7 @@ Restaurant.new(
   owner_id: 4,
   category_id: 4,
   price_range: 2
-)
+)!
 #
 # @d = Date.today
 # @t = Time.now
